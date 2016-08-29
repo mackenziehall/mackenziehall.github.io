@@ -23,11 +23,14 @@
 		First Letter : <input type="text" name="FL">
 		Siblings : <input type="number" name="SB">
 		Pet : <input type="text" name="PT">
-		<input type="submit" value="GO">
+		<input type="submit" value="GO" name="submit">
 		</form>
 		
-		<%response.write "<h6>Your username:</h6>"
-response.write "<h1>& Request.QueryString ("FJ")""& Request.QueryString ("FL")""& Request.QueryString ("SB")""& Request.QueryString ("PT")""& Request.QueryString ("PT")"</h1>
+		<%
+if request.QueryString("submit") <> "" then
+response.write "Your username: "
+response.write "<b>" & request.QueryString("FJ") & "</b>"
+end if
 %>
 		
     	        </div><!-- /.blurb -->
