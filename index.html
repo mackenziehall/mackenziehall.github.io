@@ -18,19 +18,27 @@
     		<div class="blurb">
         		<h1>Hi there, I'm Hank Quinlan!</h1>
 				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		<form method="GET">
-		<br>First Job : <input type="text" name="FJ">
-		<br>First Letter : <input type="text" name="FL">
-		<br>Siblings : <input type="number" name="SB">
-		<br>Pet : <input type="text" name="PT">
-		<input type="submit" value="GO" name="submit">
+    		
+    		<form action="form.asp" method="get">
+		First Job : <input type="text" name="FJ" />
+		First Letter : <input type="text" name="FL" />
+		Siblings : <input type="number" name="SB" />
+		Pet : <input type="text" name="PT" />
+		<input type="submit" value="GO" />
 		</form>
-		
-		<%
-if request.QueryString("submit") <> "" then
-response.write "Your username: "
-response.write "<b>" & request.QueryString("FJ") & "</b>"
-end if
+<%
+dim FJ
+dim FL
+dim SB
+dim PT
+FJ=Request.QueryString("FJ")
+FL=Request.QueryString("FL")
+SB=Request.QueryString("SB")
+PT=Request.QueryString("PT")
+If FJ FL SB PT<>"" Then
+	Response.Write(& FJ & FL & SB & PT)
+	Response.Write("How are you today?")
+End If
 %>
 		
     	        </div><!-- /.blurb -->
